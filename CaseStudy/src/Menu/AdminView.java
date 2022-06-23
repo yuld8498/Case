@@ -1,5 +1,9 @@
 package Menu;
 
+import Menu.Admin.ManagerOrder;
+import Menu.Admin.ManagerProduct;
+import Menu.Admin.ManagerUser;
+
 import java.util.Scanner;
 
 public class AdminView {
@@ -25,5 +29,25 @@ public class AdminView {
                 System.out.println("*               4. Log out                                      *");
                 System.out.println("=====================================");
                 System.out.print(" ⭆ ");
+                boolean end = false;
+               do {
+                   Scanner scanner = new Scanner(System.in);
+                   int chose = scanner.nextInt();
+                   switch (chose){
+                       case 1:
+                           ManagerUser.managerUser();
+                           break;
+                       case 2:
+                           ManagerProduct.managerProduct();
+                           break;
+                       case 3:
+                           ManagerOrder.managerOrder();
+                           break;
+                       case 4:HomePage.login();
+                           break;
+                       default: System.out.println("Chose agian please.(chose 1, 2, 3 or 4) ");
+                       end = true;
+                   }
+               }while (end);
     }
 }
