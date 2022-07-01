@@ -10,15 +10,16 @@ import java.util.Scanner;
 
 public class ManagerInfo {
     public static void Infomation(){
-        System.out.println("============= INFOMATION============");
-        System.out.println("*               1. Change Infomation                  *");
-        System.out.println("*               2. Add Infomation                        *");
-        System.out.println("*               3. Delete Infomation                    *");
-        System.out.println("*               4. Turn back                                  *");
-        System.out.println("=====================================");
-        System.out.print(" ⭆ ");
-        boolean end = false;
+
+        boolean end = true;
         do {
+            System.out.println("============= INFOMATION============");
+            System.out.println("*               1. Change Infomation                  *");
+            System.out.println("*               2. Add Infomation                        *");
+            System.out.println("*               3. Delete Infomation                    *");
+            System.out.println("*               4. Turn back                                  *");
+            System.out.println("=====================================");
+            System.out.print(" ⭆ ");
             Scanner scanner = new Scanner(System.in);
             int chose = scanner.nextInt();
             switch (chose){
@@ -32,11 +33,11 @@ public class ManagerInfo {
                     System.out.println("Delete infomation");
                     break;
                 case 4:
-                    UserView.userView();
-                    UserView.youPick();
+                    end = false;
                     break;
                 default: System.out.println("Chose agian please.(chose 1, 2, 3 or 4) ");
                 end = true;
+                break;
             }
         }while (end);
     }

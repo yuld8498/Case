@@ -22,15 +22,16 @@ public class AdminView {
         }while (realID);
     }
     public static void Adminview() {
-                System.out.println("=============== ADMIN ===============");
-                System.out.println("*               1. Manager User                           *");
-                System.out.println("*               2. Manager produc                      *");
-                System.out.println("*               3. Manager order                         *");
-                System.out.println("*               4. Log out                                      *");
-                System.out.println("=====================================");
-                System.out.print(" ⭆ ");
-                boolean end = false;
+
+                boolean end = true;
                do {
+                   System.out.println("=============== ADMIN ===============");
+                   System.out.println("*               1. Manager User                           *");
+                   System.out.println("*               2. Manager produc                      *");
+                   System.out.println("*               3. Manager order                         *");
+                   System.out.println("*               4. Log out                                      *");
+                   System.out.println("=====================================");
+                   System.out.print(" ⭆ ");
                    Scanner scanner = new Scanner(System.in);
                    int chose = scanner.nextInt();
                    switch (chose){
@@ -43,10 +44,10 @@ public class AdminView {
                        case 3:
                            ManagerOrder.managerOrder();
                            break;
-                       case 4:HomePage.login();
+                       case 4:
+                           end = false;
                            break;
                        default: System.out.println("Chose agian please.(chose 1, 2, 3 or 4) ");
-                       end = true;
                    }
                }while (end);
     }
