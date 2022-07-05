@@ -5,8 +5,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class Menu {
+public class BookManager {
     public static void Adminview() {
+        System.out.println("Default book list : ");
+        System.out.println(BooksList.Bookslist().toString());
         ArrayList<Book> list = new ArrayList<Book>(BooksList.Bookslist());
         boolean end = true;
         do {
@@ -24,31 +26,46 @@ public class Menu {
             int chose = Integer.parseInt(scanner.nextLine());
             switch (chose) {
                 case 1:
-                    list.add(BooksList.createANewBook());
+                    Book book = CreateNewBook.createANewBook();
+                    boolean check =true;
+                    for (Book isBook : list){
+                        if (book.getID() == isBook.getID()){
+                            System.out.println("Duplicate ID, please choose another ID.");
+                            check=false;
+                        }
+                    }
+                    if (check){
+                        list.add(book);
+                    }
                     break;
                 case 2:
                     System.out.println("Enter the ID to be corrected : ");
                     int Id = scanner.nextInt();
-                    int index = 0;
+                    int index = -1;
                     for (Book bookchange : list) {
-                        if (bookchange.getID() == Id){
-                            list.set(index, BooksList.createANewBook());
+                        if (bookchange.getID() == Id) {
+                            list.set(list.indexOf(bookchange), CreateNewBook.createANewBook());
+                            index = 0;
                         }
-                        index +=1;
+                    }
+                    if (index == -1) {
+                        System.out.println("can't find this ID, please check again!");
                     }
                     break;
                 case 3:
                     System.out.println("Enter the ID to be delete : ");
                     int number = scanner.nextInt();
-                    int ind = 0;
-                    int thisnumber=0;
-                    for (Book bookDel : list){
-                        if (bookDel.getID() == number){
-                            thisnumber = ind;
+                    int thisnumber = -1;
+                    for (Book bookDel : list) {
+                        if (bookDel.getID() == number) {
+                            thisnumber = list.indexOf(bookDel);
                         }
-                        ind++;
                     }
-                    list.remove(thisnumber);
+                    if (thisnumber == -1) {
+                        System.out.println("can't find this ID, please check again!");
+                    } else {
+                        list.remove(thisnumber);
+                    }
                     break;
                 case 4:
                     Collections.sort(list, new Comparator<Book>() {
@@ -64,10 +81,15 @@ public class Menu {
                 case 5:
                     System.out.println("Enter the name to be find : ");
                     String name = scanner.nextLine();
-                    for (Book bookFind : list){
-                        if (bookFind.getName().equals(name)){
+                    int count =-1;
+                    for (Book bookFind : list) {
+                        if (bookFind.getName().equals(name)) {
                             System.out.println(bookFind.toString());
+                            count =1;
                         }
+                    }
+                    if (count == -1 ){
+                        System.out.println("Can't find a book named: " + name);
                     }
                     break;
                 case 6:

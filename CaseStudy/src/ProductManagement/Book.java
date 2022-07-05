@@ -75,7 +75,7 @@ public class Book {
                         ", Category= " + category +
                         ", Author= '" + author +
                         ", Price= " + price +
-                        ", Amount= " + amount
+                        ", Amount= " + amount+"\n"
                 ;
     }
 }

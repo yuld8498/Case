@@ -22,30 +22,7 @@ public class BooksList {
         booksList.add(new Book( 96,"harry potter and Deathly Hallows 2", "J. K. Rowling", "novel,Children's literature,", 620000, 5));
         booksList.add(new Book( 102,"Lord of the rings", "J. R. R. Tolkien", "Adventure story,High fantasy", 350000, 6));
         booksList.add(new Book( 177,"The Godfather", "Morio Puzo", "novel", 300000, 5));
-        booksList.add(new Book( 188,"Les Misérables", "Victor Hugo", "novel", 420000, 6));
+        booksList.add(new Book( 188,"Les Miserables", "Victor Hugo", "novel", 420000, 6));
         return booksList;
-    }
-
-    public static Book createANewBook() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("input book name: ");
-        String name = sc.nextLine();
-        System.out.println("input name of author: ");
-        String author = sc.nextLine();
-        System.out.println("input category of book: ");
-        String category = sc.nextLine();
-        System.out.println("input price of book(VND): ");
-        int price = sc.nextInt();
-        System.out.println("input number of book available: ");
-        int amount = sc.nextInt();
-        System.out.println("input ID: ");
-        int ID = sc.nextInt();
-        Book book = new Book(ID,name, category, author, price, amount);
-        return book;
-    }
-    public static void showListBook() {
-        for (Book book : BooksList.Bookslist()) {
-            System.out.println(book);
-        }
     }
 }
