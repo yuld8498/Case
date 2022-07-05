@@ -1,0 +1,66 @@
+52
+harry potter and the philosopher's stone
+J. K. Rowling
+novel,Children's literature,
+5
+120000.0
+53
+harry potter and chamber of secrets
+J. K. Rowling
+novel,Children's literature,
+7
+220000.0
+56
+harry potter and Prisoner of Azkaban 
+J. K. Rowling
+novel,Children's literature,
+6
+250000.0
+59
+harry potter and Goblet of Fire 
+J. K. Rowling
+novel,Children's literature,
+8
+280000.0
+63
+harry potter and Order of the Phoenix
+J. K. Rowling
+novel,Children's literature,
+8
+340000.0
+77
+harry potter and Half-Blood Prince
+J. K. Rowling
+novel,Children's literature,
+7
+420000.0
+86
+harry potter and Deathly Hallows 1
+J. K. Rowling
+novel,Children's literature,
+5
+520000.0
+96
+harry potter and Deathly Hallows 2
+J. K. Rowling
+novel,Children's literature,
+5
+620000.0
+102
+Lord of the rings
+J. R. R. Tolkien
+Adventure story,High fantasy
+6
+350000.0
+177
+The Godfather
+Morio Puzo
+novel
+5
+300000.0
+188
+Les Miserables
+Victor Hugo
+novel
+6
+420000.0
